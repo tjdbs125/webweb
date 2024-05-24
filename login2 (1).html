@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-wrapper {
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="login2.css">
+    </head>
+<body>
+    <div class="login-wrapper">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="text" name="userName" placeholder="Email" required>
+            <br>
+            <input type="password" name="userPassword" placeholder="Password" required>
+            <br>
+            <label for="remember-check">
+                <input type="checkbox" id="remember-check">아이디 저장하기
+    </label>
+            <br>
+            <input type="submit" value="Login">
+    </form>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const userName = event.target.userName.value;
+            const userPassword = event.target.userPassword.value;
+
+            // 설정한 아이디와 비밀번호
+            const setUserName = '1234';
+            const setUserPassword = '1234';
+
+            if (userName === setUserName && userPassword === setUserPassword) {
+                // 로그인 성공 시 리다이렉트할 페이지 설정
+                window.location.href = 'index.html';
+            } else {
+                alert('아이디 또는 비밀번호가 잘못되었습니다.');
+            }
+        });
+    </script>
+    </body>
+</html>
